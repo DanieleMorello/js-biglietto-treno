@@ -66,6 +66,12 @@
       priceTicket.innerHTML = "Ricarica la pagina ed inserisci un numero dove richiesto";
     }
 
+    // Controllo se l' utente digita un numero negativo
+    if (ticket < 0 || userAge < 0) {
+      alert("ERRORE!!! Hai inserito un numero negativo");
+      priceTicket.innerHTML = "Ricarica la pagina ed inserisci un numero non negativo dove richiesto";
+    }
+
   </script>
 </body>
 </html>
