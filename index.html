@@ -28,17 +28,19 @@
     // document.getElementbyId
 
     // chiedi all'utente il numero di chilometri
-    const numberKm = prompt("Digita il numero di km");
+    const numberKm = Number(prompt("Digita il numero di km"));
     console.log(numberKm);
 
     // chiedere all'utente l'età del passeggero
-    const userAge = prompt("Digita l' età del passeggero");
+    const userAge = Number(prompt("Digita l' età del passeggero"));
     console.log(userAge);
 
     // Regole: prezzo del biglietto = (0.21 € al km)
     let ticket = (numberKm * 0.21);
     let discountTicket;
     console.log(ticket);
+
+    
 
     // Sconto del 20% per i minorenni
     if (userAge < 18) {
@@ -59,6 +61,12 @@
     const priceTicket = document.getElementById('price');
     console.log(priceTicket);
     priceTicket.innerHTML = `${ticket.toFixed(2)}€`;
+    
+    // Controllo se l'utente digita un numero
+    if (isNaN(numberKm) || isNaN(userAge)) {
+      alert("ERRORE!!! Devi inserire un numero");
+      priceTicket.innerHTML = "Ricarica la pagina ed inserisci un numero quando richiesto";
+    }
 
   </script>
 </body>
